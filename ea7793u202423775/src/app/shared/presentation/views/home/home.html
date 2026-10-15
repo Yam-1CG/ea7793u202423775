@@ -1,0 +1,10 @@
+<section>
+  <h1>Home</h1>
+  <p>Reservation and capacity management for adventure</p>
+  <h2>My Adventure Camps</h2>
+  <div class="camps-container">
+    @for (camp of store.camps(); track camp.id) {
+      <app-adventure-summary [camp]="camp"/>
+    }
+  </div>
+</section>
