@@ -1,1 +1,3 @@
-export interface Weather {}
+export interface Weather {
+  temperature:number;
+}
