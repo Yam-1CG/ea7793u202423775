@@ -1,20 +1,19 @@
 <mat-toolbar>
-  <span>TrailQuest Adventure Camp Management Platform</span>
-  <mat-toolbar/>
+  <span>TrailQuest Adventure Camp Management</span>
+</mat-toolbar>
 
-  <mat-sidebar-container>
-    <mat-sidenav mode="side" opened>
-      <mat-nav-list>
-        <a mat-list-item routerLink="/home">
-          Home
-        </a>
-
-        <a mait-list-item routerLink="/reservations/new">
-          Reservations
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidebar-container>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">
+        Home
+      </a>
+      <a mat-list-item routerLink="/reservations/new">
+        New Reservation
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
