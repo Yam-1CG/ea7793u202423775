@@ -1,9 +1,29 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatButton} from '@angular/material/button';
+
 
 @Component({
-  imports: [],
   selector: 'app-page-not-found',
-  styleUrl: './page-not-found.css',
+  imports: [MatButton],
   templateUrl: './page-not-found.html',
+  styleUrl: './page-not-found.css'
 })
-export class PageNotFound {}
+export class PageNotFound implements OnInit {
+
+  protected invalidPath  = '';
+
+  private route: ActivatedRoute   = inject(ActivatedRoute);
+
+
+  private router: Router          = inject(Router);
+
+  ngOnInit() {
+    this.invalidPath = this.route.snapshot.url.map(url => url.path).join('/');
+  }
+
+  protected navigateToHome() {
+    this.router.navigate(['home']).then();
+  }
+
+}
